@@ -1,5 +1,6 @@
 import datetime
-from lista_tareas import Tarea
+from lista_tareas import Tarea    #clase padre
+from tarea_urgente import TareaUrgente as tu #Clase hija
 
 #Crear una tarea con fecha de vencimiento
 tarea1 = Tarea(
@@ -14,7 +15,6 @@ tarea2= Tarea(
     prioridad=0
 )
 
-
 # Mostrar las tareas
 print("\n--- Mostrando tareas iniciales ---")
 tarea1.show_tarea()
@@ -28,3 +28,8 @@ tarea1.set_estado(True)
 print("\n--- Mostrando tarea actualizada ---")
 tarea1.show_tarea()
 tarea2.show_tarea()
+
+#Herencia simple
+tarea3 = tu("Tarea de algebra para derecho de examen", fecha_limite=datetime.date(2025, 8, 16))
+tarea3.show_tarea()
+tarea3.recordatorio_urgente()
