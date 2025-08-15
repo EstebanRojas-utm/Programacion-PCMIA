@@ -24,15 +24,15 @@ if __name__=='__main__':
     tareas = []
     opcion = 0
     
-    while opcion != 9 :
+    while opcion != "9" :
         menu()
-        opcion = int(input("Elige una opcion (1-9): "))
+        opcion = input("Elige una opcion (1-9): ")
 
-        if opcion == 1:
+        if opcion == '1':
             nombre = input("Escribe el nombre de la tarea: ")
             tareas.append({"nombre": nombre, "realizada":False})
             print("Tarea agregada.")
-        elif opcion == 2:
+        elif opcion == '2':
             nombre = input("Escribe el nombre de la tarea: ")
             try:
                 posicion = int(input("Escribe la posición donde insertar: "))
@@ -41,7 +41,7 @@ if __name__=='__main__':
             except (ValueError, IndexError):
                 print("Posición inválida.")
 
-        elif opcion == 3:
+        elif opcion == '3':
             nombre = input("Nombre de la tarea a eliminar: ")
             for tarea in tareas:
                 if tarea["nombre"] == nombre:
@@ -50,7 +50,7 @@ if __name__=='__main__':
                     break
                 else:
                     print("Tarea no encontrada.")
-        elif opcion == 4:
+        elif opcion == '4':
             try:
                 posicion = int(input("Posición de la tarea a eliminar: "))
                 tarea_eliminada = tareas.pop(posicion)
@@ -58,7 +58,7 @@ if __name__=='__main__':
             except (ValueError, IndexError):
                 print("Posición inválida.")
 
-        elif opcion == 5:
+        elif opcion == '5':
             try:
                 posicion = int(input("Posición de la tarea realizada: "))
                 tareas[posicion]["realizada"] = True
@@ -66,18 +66,18 @@ if __name__=='__main__':
             except (ValueError, IndexError):
                 print("Posición inválida.")
 
-        elif opcion == 6:
+        elif opcion == '6':
             mostrar_tareas(tareas)
 
-        elif opcion == 7:
+        elif opcion == '7':
             tareas.sort(key=lambda x: x["nombre"])
             print("Tareas ordenadas alfabéticamente.")
 
-        elif opcion == 8:
+        elif opcion == '8':
             tareas.reverse()
             print("Orden de tareas invertido.")
 
-        elif opcion == 9:
+        elif opcion == '9':
             print("Saliendo del gestor de tareas. ¡Hasta luego!")
 
         else:

@@ -1,0 +1,15 @@
+objetive = int(input('Introduce un número entero: '))
+epsilon = 0.01  # Cambiar a 0.001 y 0.0001 para pruebas
+step = epsilon**2
+solution = 0.0
+contador = 0
+
+while abs(solution**2 - objetive) >= epsilon and solution <= objetive:
+    solution += step
+    contador += 1
+
+if abs(solution**2 - objetive) >= epsilon:
+    print(f'No se encontró la raíz cuadrada de {objetive}')
+else:
+    print(f'La raíz cuadrada de {objetive} es ~ {solution}')
+print(f"Número de evaluaciones: {contador}")

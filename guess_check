@@ -1,0 +1,7 @@
+total_boletos = 10
+
+for alyssa in range(total_boletos + 1):
+    ben = alyssa - 2
+    cindy = alyssa * 2
+    if alyssa + ben + cindy == total_boletos:
+        print(f"Alyssa vendió {alyssa} boletos")
